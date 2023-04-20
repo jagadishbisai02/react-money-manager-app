@@ -1,39 +1,47 @@
 import './index.css'
 
 const MoneyDetails = props => {
-  const {transactionDetails} = props
-  const {amount, expenses} = transactionDetails
+  const {balanceAmount, incomeAmount, expensesAmount} = props
 
   return (
-    <div className="money-details-list">
+    <div className="money-details-container">
       <div className="balance-container">
         <img
           src="https://assets.ccbp.in/frontend/react-js/money-manager/balance-image.png"
           alt="balance"
+          className="details-img"
         />
-        <div className="balance-detail">
-          <h1 className="heading">Balance</h1>
-          <p className="rupees">Rs {amount - expenses}</p>
+        <div>
+          <p className="details-text">Your Balance</p>
+          <p className="details-money" data-testid="balanceAmount">
+            Rs {balanceAmount}
+          </p>
         </div>
       </div>
       <div className="income-container">
         <img
           src="https://assets.ccbp.in/frontend/react-js/money-manager/income-image.png"
           alt="income"
+          className="details-img"
         />
-        <div className="income-detail">
-          <h1 className="heading">Your Income</h1>
-          <p className="rupees">Rs {amount}</p>
+        <div>
+          <p className="details-text">Your Income</p>
+          <p className="details-money" data-testid="incomeAmount">
+            Rs {incomeAmount}
+          </p>
         </div>
       </div>
-      <div className="expense-container">
+      <div className="expenses-container">
         <img
           src="https://assets.ccbp.in/frontend/react-js/money-manager/expenses-image.png"
           alt="expenses"
+          className="details-img"
         />
-        <div className="expense-detail">
-          <h1 className="heading">Your Expenses</h1>
-          <p className="rupees">Rs {expenses}</p>
+        <div>
+          <p className="details-text">Your Expenses</p>
+          <p className="details-money" data-testid="expensesAmount">
+            Rs {expensesAmount}
+          </p>
         </div>
       </div>
     </div>
